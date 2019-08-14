@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>vue.extend 扩展实例构造器</title>
+    <script src="../assaets/js/vue.js"></script>
+</head>
+<body>
+    <h3>vue.extend 扩展实例构造器</h3>
+    <div id="author"></div>
+</body>
+<script type="text/javascript">
+    //创建一个authorExtend构造函数
+    var authorExtend=Vue.extend({
+        template:"<p><a :href='authorURL'>{{ authorName }}</a></p>",
+        data:function () {  //在vue.extend中data必须是一个函数
+            return{
+                authorName:'JSPang',
+                authorURL:'http://www.jspang.com'
+            }
+        }
+    })
+    new authorExtend().$mount('#author');
+</script>
+</html>

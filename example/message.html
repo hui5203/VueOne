@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>message</title>
+    <script src="../assaets/js/vue.js"></script>
+</head>
+<body>
+    <div id="vue1">
+        <input type="text" v-model="message">
+        <p>{{message}}</p>
+        <p>全部大写：{{message.toUpperCase()}}</p>
+    </div>
+</body>
+<script>
+    //创建vue实例
+    var vue1=new Vue({  //配置对象
+        el:'#vue1',     //element：选择器
+        data:{          //数据（model）
+            message:'hello vue1'
+        }
+    })
+</script>
+</html>

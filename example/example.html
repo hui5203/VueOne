@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>绑定事件监听</title>
+    <script src="../assaets/js/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <h3>1.绑定监听</h3>
+        <button @click="test1">test1，普通的点击事件</button><br>
+        <button @click="test2('hui')">test2，传一个自己的数据hui</button><br>
+        <button @click="test3($event)">test3，得到button文本中的内容，即test3</button><br>
+        <p>3.$event代表事件对象,@click="test3($event)"中的($event)可以不写</p><br>
+        <button @click="test4(123,$event)">test4，自己指定参数123，获得文本内容</button><br>
+        <p>4.此时不能直接传event了</p><br>
+        <p>总之，如果不传参数，实际上传的是event，如果传只能传指定的；如果有一个变量，可以用$event</p><br>
+
+        <h3>2.事件修饰符</h3>
+        <p>如果嵌套的两个div都存在点击事件存在一个问题：事件冒泡，即点击里面div的时候也相当于点击了外面的div</p>
+        <p>停止事件冒泡？stop    在标签的点击事件后加上.stop即可（ @click<span style="color: red">.stop</span>="test6"）</p>
+        <div style="width: 200px;height: 200px;background:red " @click="test5">
+            <div style="width: 100px;height: 100px;background:blue " @click.stop="test6"></div>
+        </div>
+
+        <h4>事件的默认行为</h4>
+
+        <h3>3.按键修饰符</h3>
+    </div>
+</body>
+<script>
+    var app=new Vue({
+        el:'#app',
+        data:{
+            test1(){
+                alert('test1')
+            },
+            test2(msg){
+                alert(msg)
+            },
+            test3(event){ //上面的($event)可以不写是因为这里已经传了event
+                alert(event.target.innerHTML)
+            },
+            test4(number,event){
+                alert(number+'---'+event.target.innerHTML);
+            },
+            test5(){
+                alert('out')
+            },
+            test6(){
+                alert('in');
+            }
+        }
+    })
+</script>
+</html>

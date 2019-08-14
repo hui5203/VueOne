@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>绑定事件监听</title>
+    <script src="../assaets/js/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        比赛得分：{{grade}}
+        <p>
+            <button v-on:click="addTest">加分</button><!--  =前是事件名，=后是回调函数  -->
+            <button @click="decTest">减分</button><!--绑定监听可以将 v-on: 换成@-->
+            <input type="text" v-on:keyup.enter="onEnter" v-model="grade2">
+        </p>
+        <p>keyup.enter绑定键盘回车事件，在文本框中输入数字，点击回车键，就可以将文本框中数字改为输入的数字</p>
+    </div>
+</body>
+<script>
+    var app=new Vue({
+        el:'#app',
+        data:{
+            grade:0,
+            grade2:1
+        },
+        //所有事件的回调函数都写在methods中
+        methods:{
+           addTest:function () {
+               this.grade++;
+           } ,
+            decTest:function () {
+                this.grade--;
+            },
+            onEnter:function () {
+               //因为文本框中的数字会默认转为字符串，所以我们需要用parseInt将字符串转为数字
+                this.grade=this.grade+parseInt(this.grade2);
+            }
+        }
+
+    })
+</script>
+</html>

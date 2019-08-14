@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>首页</title>
+    <script src="assaets/js/vue.js"></script>
+    <style>
+        a{
+            text-decoration:none;
+        }
+        li{
+            line-height: 30px;
+        }
+    </style>
+</head>
+<body>
+
+<!--
+    1.引入vue.js
+    2.创建Vue对象
+        el:指定根element（选择器）
+        data：初始化数据（页面可以访问）
+    3.双向数据绑定：v-model
+    4.显示数据：{{xxx}}
+    5.理解vue的mvvm实现
+
+    MVVM:
+        model：模型，数据对象（data）
+        view:视图，指的是模板页面
+        viewModel：视图模型（Vue的实例）
+-->
+
+    <div>
+        <h2>一、内部指令</h2>
+        <ol>
+            <li><a href="example/message.html">实现绑定效果</a> </li>
+            <li><a href="example/v-if.html">v-if & v-else & v-show</a></li>
+            <li><a href="example/v-for.html">v-for实例</a></li>
+            <li><a href="example/v-for1.html">v-for1遍历数组和对象</a></li>
+            <li><a href="example/v-for2.html">v-for2列表的搜索过滤</a></li>
+            <li><a href="example/v-text.html">v-text & v-html实例</a></li>
+            <li><a href="example/v-on.html">v-on实例：绑定事件监听</a></li>
+            <li><a href="example/v-model.html">v-model 数据绑定实例，v-model绑定的是数组</a></li>
+            <li><a href="example/v-bind.html">v-bind实例，强制绑定</a></li>
+            <li><a href="example/v-pre.html">v-pre & v-clock & v-once</a></li>
+            <li><a href="example/class-style.html">class-style.html</a></li>
+            <li><a href="example/example.html">example</a></li>
+            <li><a href="example/others.html">others</a></li>
+        </ol>
+
+        <h2>二、全局API</h2>
+        <ol>
+            <li><a href="example/vue.directive.html">vue.directive，自定义指令，生命周期</a></li>
+            <li><a href="example/vue.extend.html">vue.extend 扩展实例构造器</a></li>
+            <li><a href="example/shengmingzhouqi.html">生命周期</a></li>
+            <li><a href="example/vue.set.html">vue.set</a></li>
+            <li><a href="example/computed.html">计算属性和监视</a></li>
+            <li><a href="example/computed1.html">全局组件和局部组件</a></li>
+            <li><a href="example/computed2.html">使用props向子组件传递数据</a></li>
+            <li><a href="example/"></a></li>
+            <li><a href="example/"></a></li>
+
+        </ol>
+    </div>
+</body>
+<script type="text/javascript">
+    var app=new Vue({
+        el:'#app',
+        data:{
+            message:'hello VUE'
+        }
+    })
+</script>
+</html>
